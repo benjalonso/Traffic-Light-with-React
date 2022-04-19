@@ -1,25 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
 //create your first component
 const Home = () => {
+	const [selectedLight, setLight] = useState("");
+
+	function glow() {
+		setLight((selectedLight) => "0 0 20px #FAF1F0");
+	}
+
 	return (
-		<div>
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+			<div
+				className="trafficBar bg-dark container"
+				style={{
+					width: "30px",
+					height: "80px",
+					marginTop: "10px",
+				}}>
+				.
+			</div>
+
+			<div
+				className="lights container bg-dark rounded"
+				style={{ width: "120px", height: "230px" }}>
+				.
+				<div
+					className="green bg-success rounded-circle"
+					onClick={glow}
+					style={{
+						width: "60px",
+						height: "60px",
+						boxShadow: selectedLight,
+						margin: "auto",
+						marginBottom: "5px",
+					}}>
+					.
+				</div>
+				<div
+					className="yellow bg-warning rounded-circle"
+					onClick={glow}
+					style={{
+						width: "60px",
+						height: "60px",
+						boxShadow: selectedLight,
+						margin: "auto",
+						marginBottom: "5px",
+					}}>
+					.
+				</div>
+				<div
+					className="red bg-danger rounded-circle"
+					onClick={glow}
+					style={{
+						width: "60px",
+						height: "60px",
+						boxShadow: selectedLight,
+						margin: "auto",
+						marginBottom: "5px",
+					}}>
+					.
+				</div>
+			</div>
+		</>
 	);
 };
 

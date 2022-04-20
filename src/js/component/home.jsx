@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 const Home = () => {
-	const [selectedLight1, setLight1] = useState("");
-	const [selectedLight2, setLight2] = useState("");
-	const [selectedLight3, setLight3] = useState("");
+	const [selectedLight, setLight] = useState("");
 
 	return (
 		<>
@@ -28,13 +26,8 @@ const Home = () => {
 				}}>
 				.
 				<div
-					onClick={() => (selectedLight1 = setLight1("green"))}
-					className={
-						selectedLight1 +
-						(() => {
-							selectedLight1 == "green" ? "glow" : "";
-						})
-					}
+					onClick={() => setLight("green")}
+					className={selectedLight == "green" ? "glow" : ""}
 					style={{
 						width: "60px",
 						height: "60px",
@@ -46,13 +39,8 @@ const Home = () => {
 					.
 				</div>
 				<div
-					onClick={() => (selectedLight2 = setLight2("yellow"))}
-					className={
-						selectedLight2 +
-						(() => {
-							selectedLight2 === "yellow" ? "glow" : "";
-						})
-					}
+					onClick={() => setLight("yellow")}
+					className={selectedLight === "yellow" ? "glow" : ""}
 					style={{
 						width: "60px",
 						height: "60px",
@@ -64,13 +52,8 @@ const Home = () => {
 					.
 				</div>
 				<div
-					onClick={() => (selectedLight3 = setLight3("red"))}
-					className={
-						selectedLight3 +
-						(() => {
-							selectedLight3 === "red" ? "glow" : "";
-						})
-					}
+					onClick={() => setLight("red")}
+					className={selectedLight === "red" ? "glow" : ""}
 					style={{
 						width: "60px",
 						height: "60px",

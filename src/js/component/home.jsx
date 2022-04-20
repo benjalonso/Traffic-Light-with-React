@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-//"0 0 20px #FAF1F0"
-//create your first component
 const Home = () => {
-	const [selectedLight, setLight] = useState("");
+	const [selectedLight1, setLight1] = useState("");
+	const [selectedLight2, setLight2] = useState("");
+	const [selectedLight3, setLight3] = useState("");
 
 	return (
 		<>
@@ -28,12 +28,12 @@ const Home = () => {
 				}}>
 				.
 				<div
-					onClick={() => setLight("green")}
+					onClick={() => (selectedLight1 = setLight1("green"))}
 					className={
-						"green" +
-						(selectedLight === "green"
-							? "shadow-sm p-3 mb-5 bg-white rounded"
-							: " ")
+						selectedLight1 +
+						(() => {
+							selectedLight1 == "green" ? "glow" : "";
+						})
 					}
 					style={{
 						width: "60px",
@@ -46,12 +46,12 @@ const Home = () => {
 					.
 				</div>
 				<div
-					onClick={() => setLight("yellow")}
+					onClick={() => (selectedLight2 = setLight2("yellow"))}
 					className={
-						"yellow" +
-						(selectedLight === "yellow"
-							? "shadow-sm p-3 mb-5 bg-white rounded"
-							: " ")
+						selectedLight2 +
+						(() => {
+							selectedLight2 === "yellow" ? "glow" : "";
+						})
 					}
 					style={{
 						width: "60px",
@@ -64,12 +64,12 @@ const Home = () => {
 					.
 				</div>
 				<div
-					onClick={() => setLight("red")}
+					onClick={() => (selectedLight3 = setLight3("red"))}
 					className={
-						"red" +
-						(selectedLight === "red"
-							? "shadow-sm p-3 mb-5 bg-white rounded"
-							: " ")
+						selectedLight3 +
+						(() => {
+							selectedLight3 === "red" ? "glow" : "";
+						})
 					}
 					style={{
 						width: "60px",
